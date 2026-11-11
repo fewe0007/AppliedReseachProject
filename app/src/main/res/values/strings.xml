@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Housekeeper</string>
+    <string name="title_housekeeper">Housekeeper Portal</string>
+    <string name="title_assigned_suites">Assigned Suites</string>
+    <string name="title_completed_suites">Completed Suites</string>
+    <string name="subtitle_welcome">Select an option below to proceed</string>
+
+    <string name="btn_assigned_suites">Assigned Suites</string>
+    <string name="btn_assigned_suites_count">Assigned Suites (%1$d)</string>
+    <string name="btn_completed_suites">Completed Suites</string>
+    <string name="btn_completed_suites_count">Completed Suites (%1$d)</string>
+    <string name="btn_sync_server">Sync with Server</string>
+    <string name="btn_logout">Log out</string>
+    <string name="btn_back">Back</string>
+    <string name="btn_save_progress">Save &amp; Complete</string>
+
+    <string name="suite_1">Suite 1</string>
+    <string name="suite_2">Suite 2</string>
+    <string name="address_suite_1">101 Ocean Drive, Suite 1</string>
+    <string name="address_suite_2">204 Sunset Blvd, Suite 2</string>
+
+    <string name="progress_tasks">%1$d of %2$d Tasks Completed</string>
+    <string name="msg_tasks_saved">Saved! %1$d of %2$d tasks completed.</string>
+    <string name="msg_suite_completed_moved">%1$s completed and moved to Completed Suites!</string>
+    <string name="msg_no_assigned_suites">No assigned suites remaining. Great job!</string>
+    <string name="msg_no_completed_suites">No completed suites yet.</string>
+    <string name="msg_assigned_suites">Opening Assigned Suites&#8230;</string>
+    <string name="msg_completed_suites">Opening Completed Suites&#8230;</string>
+    <string name="msg_sync_server">Syncing data with server&#8230;</string>
+    <string name="msg_logout">Logging out&#8230;</string>
+    <string name="msg_selected_suite">Selected %1$s</string>
+</resources>

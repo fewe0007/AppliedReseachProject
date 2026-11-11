@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_page"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".SuiteTasksActivity">
+
+    <!-- Header Section with Back Button -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/btn_back"
+            android:src="@android:drawable/ic_menu_revert"
+            app:tint="@color/text_header" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvSuiteTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_header"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                tools:text="Suite 1" />
+
+            <TextView
+                android:id="@+id/tvSuiteAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_subtext"
+                android:textSize="13sp"
+                tools:text="101 Ocean Drive, Suite 1" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Progress Card Banner -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        app:cardBackgroundColor="@color/btn_assigned_suites"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="0dp">
+
+        <TextView
+            android:id="@+id/tvProgress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="14dp"
+            android:textColor="@color/btn_assigned_suites_text"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            tools:text="0 of 7 Tasks Completed" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Tasks Checklist RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvTasks"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false" />
+
+    <!-- Save Progress Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSaveProgress"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/btn_save_progress"
+        android:textColor="@color/btn_assigned_suites_text"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:backgroundTint="@color/btn_assigned_suites"
+        app:cornerRadius="14dp"
+        app:elevation="2dp" />
+
+</LinearLayout>

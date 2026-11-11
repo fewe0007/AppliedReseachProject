@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_page"
+    android:fillViewport="true"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- Header Section -->
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6dp"
+            android:text="@string/title_housekeeper"
+            android:textColor="@color/text_header"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvSubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="36dp"
+            android:gravity="center"
+            android:text="@string/subtitle_welcome"
+            android:textColor="@color/text_subtext"
+            android:textSize="15sp" />
+
+        <!-- 4 Vertical Action Buttons -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAssignedSuites"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/btn_assigned_suites"
+            android:textColor="@color/btn_assigned_suites_text"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            app:backgroundTint="@color/btn_assigned_suites"
+            app:cornerRadius="16dp"
+            app:elevation="2dp"
+            app:rippleColor="#40000000" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCompletedSuites"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/btn_completed_suites"
+            android:textColor="@color/btn_completed_suites_text"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            app:backgroundTint="@color/btn_completed_suites"
+            app:cornerRadius="16dp"
+            app:elevation="2dp"
+            app:rippleColor="#40000000" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSyncServer"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/btn_sync_server"
+            android:textColor="@color/btn_sync_server_text"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            app:backgroundTint="@color/btn_sync_server"
+            app:cornerRadius="16dp"
+            app:elevation="2dp"
+            app:rippleColor="#40000000" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnLogout"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/btn_logout"
+            android:textColor="@color/btn_logout_text"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            app:backgroundTint="@color/btn_logout"
+            app:cornerRadius="16dp"
+            app:elevation="2dp"
+            app:rippleColor="#40000000" />
+
+    </LinearLayout>
+</ScrollView>
