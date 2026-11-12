@@ -1,21 +1,34 @@
 package com.example.appliedreseachproject
 
+import android.graphics.BitmapFactory
 import android.graphics.Paint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.CheckBox
+import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.button.MaterialButton
+import java.io.File
 
 class TaskAdapter(
     private val tasks: List<HousekeepingTask>,
-    private val onTaskChanged: (HousekeepingTask) -> Unit
+    private val isReadOnly: Boolean = false,
+    private val onTaskChanged: (HousekeepingTask) -> Unit,
+    private val onAttachPhotoClick: (HousekeepingTask) -> Unit,
+    private val onViewPhotoClick: (HousekeepingTask) -> Unit
 ) : RecyclerView.Adapter<TaskAdapter.TaskViewHolder>() {
 
     class TaskViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val cbTask: CheckBox = itemView.findViewById(R.id.cbTask)
         val tvTaskTitle: TextView = itemView.findViewById(R.id.tvTaskTitle)
+        val btnAttachPhoto: MaterialButton = itemView.findViewById(R.id.btnAttachPhoto)
+        val layoutPhotoPreview: LinearLayout = itemView.findViewById(R.id.layoutPhotoPreview)
+        val ivPhotoThumbnail: ImageView = itemView.findViewById(R.id.ivPhotoThumbnail)
+        val tvPhotoStatus: TextView = itemView.findViewById(R.id.tvPhotoStatus)
+        val btnViewPhoto: TextView = itemView.findViewById(R.id.btnViewPhoto)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskViewHolder {
@@ -30,17 +43,53 @@ class TaskAdapter(
 
         holder.cbTask.setOnCheckedChangeListener(null)
         holder.cbTask.isChecked = task.isCompleted
+        holder.cbTask.isEnabled = !isReadOnly
 
         updateStrikethrough(holder.tvTaskTitle, task.isCompleted)
 
-        holder.cbTask.setOnCheckedChangeListener { _, isChecked ->
-            task.isCompleted = isChecked
-            updateStrikethrough(holder.tvTaskTitle, isChecked)
-            onTaskChanged(task)
+        if (!isReadOnly) {
+            holder.cbTask.setOnCheckedChangeListener { _, isChecked ->
+                task.isCompleted = isChecked
+                updateStrikethrough(holder.tvTaskTitle, isChecked)
+                onTaskChanged(task)
+            }
+
+            holder.itemView.setOnClickListener {
+                holder.cbTask.isChecked = !holder.cbTask.isChecked
+            }
+
+            holder.btnAttachPhoto.visibility = View.VISIBLE
+            holder.btnAttachPhoto.setOnClickListener {
+                onAttachPhotoClick(task)
+            }
+        } else {
+            holder.itemView.setOnClickListener(null)
+            holder.btnAttachPhoto.visibility = if (task.photoUri == null) View.GONE else View.VISIBLE
+            holder.btnAttachPhoto.text = holder.itemView.context.getString(R.string.btn_change_photo)
+            holder.btnAttachPhoto.setOnClickListener {
+                onAttachPhotoClick(task)
+            }
         }
 
-        holder.itemView.setOnClickListener {
-            holder.cbTask.isChecked = !holder.cbTask.isChecked
+        if (!task.photoUri.isNullOrEmpty()) {
+            holder.layoutPhotoPreview.visibility = View.VISIBLE
+            holder.btnAttachPhoto.text = holder.itemView.context.getString(R.string.btn_change_photo)
+
+            val photoFile = File(task.photoUri!!)
+            if (photoFile.exists()) {
+                val bitmap = BitmapFactory.decodeFile(photoFile.absolutePath)
+                holder.ivPhotoThumbnail.setImageBitmap(bitmap)
+            }
+
+            holder.btnViewPhoto.setOnClickListener {
+                onViewPhotoClick(task)
+            }
+            holder.ivPhotoThumbnail.setOnClickListener {
+                onViewPhotoClick(task)
+            }
+        } else {
+            holder.layoutPhotoPreview.visibility = View.GONE
+            holder.btnAttachPhoto.text = holder.itemView.context.getString(R.string.btn_add_photo)
         }
     }
 

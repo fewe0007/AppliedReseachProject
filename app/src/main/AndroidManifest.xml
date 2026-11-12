@@ -22,6 +22,11 @@
         </activity>
 
         <activity
+            android:name=".AddSuiteActivity"
+            android:exported="false"
+            android:label="@string/title_add_suite" />
+
+        <activity
             android:name=".AssignedSuitesActivity"
             android:exported="false"
             android:label="@string/title_assigned_suites" />

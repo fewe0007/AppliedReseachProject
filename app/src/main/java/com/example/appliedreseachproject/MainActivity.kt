@@ -10,15 +10,22 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var btnAssignedSuites: MaterialButton
     private lateinit var btnCompletedSuites: MaterialButton
+    private lateinit var btnAddSuite: MaterialButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        btnAddSuite = findViewById(R.id.btnAddSuite)
         btnAssignedSuites = findViewById(R.id.btnAssignedSuites)
         btnCompletedSuites = findViewById(R.id.btnCompletedSuites)
         val btnSyncServer = findViewById<MaterialButton>(R.id.btnSyncServer)
         val btnLogout = findViewById<MaterialButton>(R.id.btnLogout)
+
+        btnAddSuite.setOnClickListener {
+            val intent = Intent(this, AddSuiteActivity::class.java)
+            startActivity(intent)
+        }
 
         btnAssignedSuites.setOnClickListener {
             val intent = Intent(this, AssignedSuitesActivity::class.java)

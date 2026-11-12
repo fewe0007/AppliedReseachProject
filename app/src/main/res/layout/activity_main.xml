@@ -11,30 +11,59 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
+        android:gravity="center_horizontal"
         android:orientation="vertical"
         android:padding="24dp">
 
-        <!-- Header Section -->
-        <TextView
-            android:id="@+id/tvTitle"
-            android:layout_width="wrap_content"
+        <!-- Header Row with Title and Add Suite Button -->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="6dp"
-            android:text="@string/title_housekeeper"
-            android:textColor="@color/text_header"
-            android:textSize="28sp"
-            android:textStyle="bold" />
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_marginBottom="28dp">
 
-        <TextView
-            android:id="@+id/tvSubtitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="36dp"
-            android:gravity="center"
-            android:text="@string/subtitle_welcome"
-            android:textColor="@color/text_subtext"
-            android:textSize="15sp" />
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/title_housekeeper"
+                    android:textColor="@color/text_header"
+                    android:textSize="26sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvSubtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/subtitle_welcome"
+                    android:textColor="@color/text_subtext"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <!-- Small Top Button: Add Suite -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAddSuite"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginStart="8dp"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:text="@string/btn_add_suite"
+                android:textColor="@color/btn_assigned_suites_text"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                app:cornerRadius="20dp"
+                app:strokeColor="@color/btn_assigned_suites"
+                app:strokeWidth="1.5dp" />
+        </LinearLayout>
 
         <!-- 4 Vertical Action Buttons -->
         <com.google.android.material.button.MaterialButton

@@ -1,10 +1,12 @@
 <resources>
     <string name="app_name">Housekeeper</string>
-    <string name="title_housekeeper">Housekeeper Portal</string>
+    <string name="title_housekeeper">Housekeeper</string>
     <string name="title_assigned_suites">Assigned Suites</string>
     <string name="title_completed_suites">Completed Suites</string>
+    <string name="title_add_suite">Add New Suite</string>
     <string name="subtitle_welcome">Select an option below to proceed</string>
 
+    <string name="btn_add_suite">+ Add Suite</string>
     <string name="btn_assigned_suites">Assigned Suites</string>
     <string name="btn_assigned_suites_count">Assigned Suites (%1$d)</string>
     <string name="btn_completed_suites">Completed Suites</string>
@@ -12,7 +14,36 @@
     <string name="btn_sync_server">Sync with Server</string>
     <string name="btn_logout">Log out</string>
     <string name="btn_back">Back</string>
+    <string name="btn_close">Close</string>
+    <string name="btn_cancel">Cancel</string>
+
+    <string name="btn_add_task">+ Add Task</string>
+    <string name="btn_load_default_tasks">+ Load Default Tasks</string>
+    <string name="btn_create_suite">Create Suite</string>
+    <string name="btn_remove_task">Remove Task</string>
     <string name="btn_save_progress">Save &amp; Complete</string>
+    <string name="btn_add_photo">+ Photo</string>
+    <string name="btn_change_photo">Change Photo</string>
+    <string name="btn_view_photo">View Photo</string>
+
+    <string name="label_suite_tasks">Housekeeping Tasks</string>
+    <string name="hint_suite_name">Suite Name (e.g. Suite 3)</string>
+    <string name="hint_suite_address">Street Address (e.g. 500 Ocean Ave)</string>
+    <string name="hint_task_title">Enter task description&#8230;</string>
+
+    <string name="task_strip_bed">Strip bed linens and remake with fresh sheets</string>
+    <string name="task_clean_bathroom">Disinfect and scrub bathroom &amp; mirrors</string>
+    <string name="task_replace_towels">Replace used bath towels and washcloths</string>
+    <string name="task_vacuum_mop">Vacuum carpets and mop hard surface floors</string>
+    <string name="task_dust_surfaces">Dust furniture, TV, and window sills</string>
+    <string name="task_empty_trash">Empty trash cans and replace liners</string>
+    <string name="task_restock_amenities">Restock toiletries and complimentary items</string>
+
+    <string name="dialog_attach_photo_title">Attach Photo for %1$s</string>
+    <string name="option_take_photo">Take Photo with Camera</string>
+    <string name="option_choose_from_files">Choose from Files / Gallery</string>
+    <string name="status_photo_attached">Photo Attached</string>
+    <string name="desc_task_photo">Task Photo</string>
 
     <string name="suite_1">Suite 1</string>
     <string name="suite_2">Suite 2</string>
@@ -21,9 +52,15 @@
 
     <string name="progress_tasks">%1$d of %2$d Tasks Completed</string>
     <string name="msg_tasks_saved">Saved! %1$d of %2$d tasks completed.</string>
+    <string name="msg_photo_attached">Photo attached to task successfully!</string>
     <string name="msg_suite_completed_moved">%1$s completed and moved to Completed Suites!</string>
+    <string name="msg_suite_created">%1$s added to Assigned Suites!</string>
     <string name="msg_no_assigned_suites">No assigned suites remaining. Great job!</string>
     <string name="msg_no_completed_suites">No completed suites yet.</string>
+    <string name="msg_enter_task">Please enter a task description.</string>
+    <string name="msg_add_at_least_one_task">Please add at least one task for this suite.</string>
+    <string name="msg_default_tasks_loaded">Default housekeeping tasks loaded.</string>
+    <string name="error_required">Field required</string>
     <string name="msg_assigned_suites">Opening Assigned Suites&#8230;</string>
     <string name="msg_completed_suites">Opening Completed Suites&#8230;</string>
     <string name="msg_sync_server">Syncing data with server&#8230;</string>

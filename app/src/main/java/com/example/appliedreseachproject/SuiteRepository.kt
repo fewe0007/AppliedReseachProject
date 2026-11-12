@@ -9,13 +9,13 @@ object SuiteRepository {
             address = "101 Ocean Drive, Suite 1",
             isCompleted = false,
             tasks = mutableListOf(
-                HousekeepingTask("1", "Strip bed linens and remake with fresh sheets"),
-                HousekeepingTask("2", "Disinfect and scrub bathroom & mirrors"),
-                HousekeepingTask("3", "Replace used bath towels and washcloths"),
-                HousekeepingTask("4", "Vacuum carpets and mop hard surface floors"),
-                HousekeepingTask("5", "Dust furniture, TV, and window sills"),
-                HousekeepingTask("6", "Empty trash cans and replace liners"),
-                HousekeepingTask("7", "Restock toiletries and complimentary items")
+                HousekeepingTask("1_1", "Strip bed linens and remake with fresh sheets"),
+                HousekeepingTask("1_2", "Disinfect and scrub bathroom & mirrors"),
+                HousekeepingTask("1_3", "Replace used bath towels and washcloths"),
+                HousekeepingTask("1_4", "Vacuum carpets and mop hard surface floors"),
+                HousekeepingTask("1_5", "Dust furniture, TV, and window sills"),
+                HousekeepingTask("1_6", "Empty trash cans and replace liners"),
+                HousekeepingTask("1_7", "Restock toiletries and complimentary items")
             )
         ),
         Suite(
@@ -24,13 +24,13 @@ object SuiteRepository {
             address = "204 Sunset Blvd, Suite 2",
             isCompleted = false,
             tasks = mutableListOf(
-                HousekeepingTask("1", "Strip bed linens and remake with fresh sheets"),
-                HousekeepingTask("2", "Disinfect and scrub bathroom & mirrors"),
-                HousekeepingTask("3", "Replace used bath towels and washcloths"),
-                HousekeepingTask("4", "Vacuum carpets and mop hard surface floors"),
-                HousekeepingTask("5", "Dust furniture, TV, and window sills"),
-                HousekeepingTask("6", "Empty trash cans and replace liners"),
-                HousekeepingTask("7", "Restock toiletries and complimentary items")
+                HousekeepingTask("2_1", "Strip bed linens and remake with fresh sheets"),
+                HousekeepingTask("2_2", "Disinfect and scrub bathroom & mirrors"),
+                HousekeepingTask("2_3", "Replace used bath towels and washcloths"),
+                HousekeepingTask("2_4", "Vacuum carpets and mop hard surface floors"),
+                HousekeepingTask("2_5", "Dust furniture, TV, and window sills"),
+                HousekeepingTask("2_6", "Empty trash cans and replace liners"),
+                HousekeepingTask("2_7", "Restock toiletries and complimentary items")
             )
         )
     )
@@ -45,6 +45,10 @@ object SuiteRepository {
 
     fun getSuiteById(id: String): Suite? {
         return suites.find { it.id == id }
+    }
+
+    fun addSuite(suite: Suite) {
+        suites.add(suite)
     }
 
     fun markSuiteCompleted(id: String) {
